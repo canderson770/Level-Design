@@ -1,15 +1,17 @@
 ﻿// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
 
 
-Shader "Custom/BlendSamplersByDirection" {
+Shader "Cody/Snow" {
     Properties {
+    	_Color ("Base Color", Color) = (1, 1, 1, 1)
         _MainTex ("Base (RGB)", 2D) = "white" {}
-        _MainBump ("MainBump", 2D) = "bump" {}
-        _LayerTex ("Layer (RGB)", 2D) = "white" {}
-        _LayerBump ("LayerBump", 2D) ="bump" {}
-        _LayerStrength ("Layer Strength", Range(0, 1)) = 0
-        _LayerDirection ("Layer Direction", Vector) = (0, 1, 0)
-        _LayerDepth ("Layer Depth", Range(0, 0.005)) = 0.0005
+        _MainBump ("Normal Map", 2D) = "bump" {}
+        _SnowColor ("Snow color", Color) = (1, 1, 1, 1)
+        _LayerTex ("Snow (RGB)", 2D) = "white" {}
+        _LayerBump ("Snow Normal Map", 2D) ="bump" {}
+        _LayerStrength ("Snow Amount", Range(0, 1)) = 0
+        _LayerDirection ("Snow Direction", Vector) = (0, 1, 0)
+//        _LayerDepth ("Layer Depth", Range(0, 0.005)) = 0.0005
     }
    
     SubShader {
@@ -19,7 +21,9 @@ Shader "Custom/BlendSamplersByDirection" {
         CGPROGRAM
         #pragma target 3.0
         #pragma surface surf Lambert vertex:vert
- 
+
+        half4 _Color;
+        half4 _SnowColor;
         sampler2D _MainTex;
         sampler2D _MainBump;
         sampler2D _LayerTex;
@@ -63,13 +67,13 @@ Shader "Custom/BlendSamplersByDirection" {
            
             if (sm >= lerp(1, 0, _LayerStrength))
             {
-                o.Albedo = (layerDiffuse.rgb + 0.5 * mainDiffuse.rgb) * 0.75;
+                o.Albedo = (layerDiffuse.rgb + 0.5 * mainDiffuse.rgb) * 0.75 * _SnowColor;
                 layerNormal = UnpackNormal(tex2D(_LayerBump, IN.uv_LayerBump));
                 o.Normal = normalize(o.Normal + layerNormal);
             }
             else
             {
-                o.Albedo = mainDiffuse.rgb;
+                o.Albedo = mainDiffuse.rgb * _Color;
             }
        
             o.Alpha = mainDiffuse.a;
