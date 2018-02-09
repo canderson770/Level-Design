@@ -12,6 +12,9 @@ Shader "Cody/Snow" {
         _LayerStrength ("Snow Amount", Range(0, 1)) = 0
         _LayerDirection ("Snow Direction", Vector) = (0, 1, 0)
 //        _LayerDepth ("Layer Depth", Range(0, 0.005)) = 0.0005
+		_MinHeight ("Min Height", float) = 0
+		_MaxHeight ("Max Height", float) = 0
+
     }
    
     SubShader {
@@ -31,6 +34,8 @@ Shader "Cody/Snow" {
         float _LayerStrength;
         float3 _LayerDirection;
         float _LayerDepth;
+        float _MinHeight;
+        float _MaxHeight;
  
         struct Input {
             float2 uv_MainTex;
@@ -64,7 +69,10 @@ Shader "Cody/Snow" {
             // Snow mask
             half sm = dot(WorldNormalVector(IN, o.Normal), _LayerDirection);
             sm = pow(0.5 * sm + 0.5, 2.0);
-           
+
+			if (IN.worldNormal.y < _MinHeight)
+				 discard;
+
             if (sm >= lerp(1, 0, _LayerStrength))
             {
                 o.Albedo = (layerDiffuse.rgb + 0.5 * mainDiffuse.rgb) * 0.75 * _SnowColor;

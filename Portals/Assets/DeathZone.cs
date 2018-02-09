@@ -8,10 +8,12 @@ public class DeathZone : MonoBehaviour
     Vector3 safePosition;
     Quaternion safeRotation;
     CharacterController cc;
+    Rigidbody rb;
 
     void Start()
     {
         cc = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
 
         safePosition = transform.localPosition;
         safeRotation = transform.localRotation;
@@ -35,7 +37,8 @@ public class DeathZone : MonoBehaviour
    
     void OnTriggerEnter()
     {
-        transform.position = safePosition;
+        transform.position = new Vector3(safePosition.x, safePosition.y + 2, safePosition.z);
         transform.rotation = safeRotation;
+        rb.velocity = Vector3.zero;
     }
 }

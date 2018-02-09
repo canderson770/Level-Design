@@ -17,6 +17,9 @@
         _Speed ("Speed", Range(-5,5)) = 1.
         _Distance ("Fading distance", Range(0, 10.)) = 1.
 		_RedReduce("Fix Red", Range (0,5)) = 0
+
+        [Space(10)]
+        _Cull ("Cull", float) = 0
     }
  
     SubShader
@@ -24,7 +27,7 @@
         Tags { "Queue"="Transparent" "RenderType"="Transparent" }
         Blend SrcAlpha OneMinusSrcAlpha
         ZWrite Off
-        Cull off
+        Cull [_Cull]
  
         Pass
         {
