@@ -1,0 +1,112 @@
+Initialize engine version: 2017.1.0f3 (472613c02cf7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA Quadro K620 (ID=0x13bb)
+    Vendor:   NVIDIA
+    VRAM:     1993 MB
+    Driver:   10.18.13.5467
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\10600006\Documents\Level-Design\PCBuild\SnowSlice_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\10600006\Documents\Level-Design\PCBuild\SnowSlice_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\10600006\Documents\Level-Design\PCBuild\SnowSlice_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\10600006\Documents\Level-Design\PCBuild\SnowSlice_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\10600006\Documents\Level-Design\PCBuild\SnowSlice_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\10600006\Documents\Level-Design\PCBuild\SnowSlice_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\10600006\Documents\Level-Design\PCBuild\SnowSlice_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\10600006\Documents\Level-Design\PCBuild\SnowSlice_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\10600006\Documents\Level-Design\PCBuild\SnowSlice_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\10600006\Documents\Level-Design\PCBuild\SnowSlice_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\10600006\Documents\Level-Design\PCBuild\SnowSlice_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading C:\Users\10600006\Documents\Level-Design\PCBuild\SnowSlice_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: C:\Users\10600006\Documents\Level-Design\PCBuild\SnowSlice_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\10600006\Documents\Level-Design\PCBuild\SnowSlice_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.026 seconds
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.943473 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 38fc -> priority: 1 
+  Thread -> id: 2404 -> priority: 1 
+  Thread -> id: 1e2c -> priority: 1 
+  Thread -> id: 3860 -> priority: 1 
+GfxDevice: creating device client; threaded=1
+GfxDevice: creating device client; threaded=1
+GfxDevice: creating device client; threaded=1
+GfxDevice: creating device client; threaded=1
+GfxDevice: creating device client; threaded=1
+GfxDevice: creating device client; threaded=1
+Can not play a disabled audio source
+ 
+(Filename:  Line: 550)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 550)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 550)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 2250)
+

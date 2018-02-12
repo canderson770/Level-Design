@@ -28,3 +28,9 @@ https://www.youtube.com/watch?v=aCgKm8nm-lw
 https://www.youtube.com/watch?v=5YDgtXDeB7M
 https://www.youtube.com/watch?v=rtO9maU709k
 https://www.youtube.com/watch?v=rINTs7e6EW0
+
+
+https://lindseyreidblog.wordpress.com/2018/01/07/waving-grass-shader-in-unity/
+https://lindseyreidblog.wordpress.com/2017/12/19/cel-shader-with-outline-in-unity/
+http://blog.kjinteractive.net/2016/creating-simple-vertex-painted-swaying-grass-in-unity/
+https://github.com/keijiro/KvantGrass
