@@ -35,10 +35,13 @@ public class DeathZone : MonoBehaviour
     }
 
    
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider coll)
     {
-        transform.position = new Vector3(safePosition.x, safePosition.y + 2, safePosition.z);
-        transform.rotation = safeRotation;
-        rb.velocity = Vector3.zero;
+        if (coll.gameObject.name.Contains("DeathZone"))
+        {
+            transform.position = new Vector3(safePosition.x, safePosition.y + 2, safePosition.z);
+            transform.rotation = safeRotation;
+            rb.velocity = Vector3.zero;
+        }
     }
 }
