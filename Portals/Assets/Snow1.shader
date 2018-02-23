@@ -1,7 +1,7 @@
 ﻿// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
 
 
-Shader "Cody/Snow" {
+Shader "Cody/SNOW-AND-MOSS/Snow" {
     Properties {
     	_Color ("Base Color", Color) = (1, 1, 1, 1)
         _MainTex ("Base (RGB)", 2D) = "white" {}
