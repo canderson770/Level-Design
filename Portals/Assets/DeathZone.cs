@@ -39,8 +39,8 @@ public class DeathZone : MonoBehaviour
     {
         if (coll.gameObject.name.Contains("DeathZone"))
         {
-            transform.position = new Vector3(safePosition.x, safePosition.y + 2, safePosition.z);
-            transform.rotation = safeRotation;
+            transform.localPosition = new Vector3(safePosition.x, safePosition.y + 2, safePosition.z);
+            transform.localRotation = safeRotation;
             rb.velocity = Vector3.zero;
         }
     }
