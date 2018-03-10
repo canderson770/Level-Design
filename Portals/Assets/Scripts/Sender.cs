@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
-public class Sender : MonoBehaviour {
+public class Sender : MonoBehaviour
+{
 
     public GameObject player;
     public GameObject receiver;
@@ -9,12 +11,13 @@ public class Sender : MonoBehaviour {
     private float prevDot = 0;
     private bool playerOverlapping = false;
 
-    void Start () {
-    }
+    public UnityEvent onTriggerEnter;
+    public UnityEvent onTriggerExit;
 
     void Update()
     {
-        if (playerOverlapping) {
+        if (playerOverlapping)
+        {
             var currentDot = Vector3.Dot(transform.up, player.transform.position - transform.position);
 
             if (currentDot < 0) // only transport the player once he's moved across plane
@@ -42,6 +45,8 @@ public class Sender : MonoBehaviour {
         if (other.tag == "Player")
         {
             playerOverlapping = true;
+
+            onTriggerEnter.Invoke();
         }
     }
 
@@ -50,6 +55,8 @@ public class Sender : MonoBehaviour {
         if (other.tag == "Player")
         {
             playerOverlapping = false;
+
+            onTriggerExit.Invoke();
         }
     }
 }
