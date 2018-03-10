@@ -8,11 +8,11 @@ Shader "Hidden/NewImageEffectShader"
 	}
 	SubShader
 	{
-		Tags{ "Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Transparent" }
-		Lighting Off
+		Tags{ "Queue" = "Geometery""RenderType" = "Geometery" }
+//		Lighting Off
 		Cull Back
-		ZWrite On
-		ZTest Less
+//		ZWrite On
+//		ZTest Less
 		
 		Fog{ Mode Off }
 
