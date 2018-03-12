@@ -8,7 +8,7 @@ Shader "Hidden/NewImageEffectShader"
 	}
 	SubShader
 	{
-		Tags{ "Queue" = "Geometery""RenderType" = "Geometery" }
+		Tags{ "Queue" = "Transparent" "RenderType" = "Transparent" }
 //		Lighting Off
 		Cull Back
 //		ZWrite On
