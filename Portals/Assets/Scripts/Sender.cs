@@ -11,8 +11,7 @@ public class Sender : MonoBehaviour
     private float prevDot = 0;
     private bool playerOverlapping = false;
 
-    public UnityEvent onTriggerEnter;
-    public UnityEvent onTriggerExit;
+    public Trigger triggerEvents;
 
     void Update()
     {
@@ -46,7 +45,7 @@ public class Sender : MonoBehaviour
         {
             playerOverlapping = true;
 
-            onTriggerEnter.Invoke();
+            triggerEvents.onTriggerEnter.Invoke();
         }
     }
 
@@ -56,7 +55,7 @@ public class Sender : MonoBehaviour
         {
             playerOverlapping = false;
 
-            onTriggerExit.Invoke();
+            triggerEvents.onTriggerExit.Invoke();
         }
     }
 }

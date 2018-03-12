@@ -5,14 +5,15 @@ Shader "Hidden/NewImageEffectShader"
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
+		_Tint("Tint", Color) = (0,0,0,1)
 	}
 	SubShader
 	{
-		Tags{ "Queue" = "Transparent" "RenderType" = "Transparent" }
-//		Lighting Off
+		Tags{ "Queue" = "Geometry" "RenderType" = "Transparent" }
+		Lighting Off
 		Cull Back
-//		ZWrite On
-//		ZTest Less
+		ZWrite On
+		ZTest Less
 		
 		Fog{ Mode Off }
 
@@ -46,11 +47,12 @@ Shader "Hidden/NewImageEffectShader"
 			}
 			
 			sampler2D _MainTex;
+			fixed4 _Tint;
 
 			fixed4 frag (v2f i) : SV_Target
 			{
 				i.screenPos /= i.screenPos.w;
-				fixed4 col = tex2D(_MainTex, float2(i.screenPos.x, i.screenPos.y));
+				fixed4 col = tex2D(_MainTex, float2(i.screenPos.x, i.screenPos.y)) * _Tint;
 				
 				return col;
 			}
