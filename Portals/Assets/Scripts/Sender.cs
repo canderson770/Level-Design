@@ -12,6 +12,7 @@ public class Sender : MonoBehaviour
     private bool playerOverlapping = false;
 
     public Trigger triggerEvents;
+    public UnityEvent OnTeleport;
 
     void Update()
     {
@@ -32,6 +33,8 @@ public class Sender : MonoBehaviour
                 player.transform.position = newPosition;
 
                 playerOverlapping = false;
+
+                OnTeleport.Invoke();
             }
                
             prevDot = currentDot;
