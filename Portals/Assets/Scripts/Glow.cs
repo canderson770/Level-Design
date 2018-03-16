@@ -1,66 +1,49 @@
-
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Glow : MonoBehaviour 
+public class Glow : MonoBehaviour
 {
-    public bool isIncreasing = true;
-    public bool isDecreasing = false;
-    public float min = 0;
-    public float max = 2;
-    public float amount = .1f;
+    public bool enabled = true;
+    public bool randomSelection = false;
+    public List<Texture> emissionMaps;
     public float frequency = .1f;
 
-    public Material mat;
-    public Renderer _renderer;
+    private Material thisMaterial;
+    private int randomValue = 0;
 
-    public float value = 0;
-
-	void Start () 
+    void Start()
     {
-        mat = GetComponent<MeshRenderer>().material;
-        _renderer = GetComponent<Renderer>();
-        StartCoroutine(IncreaseGlow());
-	}
-	
-    IEnumerator IncreaseGlow()
-    {
-        while(isIncreasing)
-        {
-            value += amount;
-            mat.SetFloat("_EmissionColor", value);
-            _renderer.UpdateGIMaterials ();
-            DynamicGI.UpdateEnvironment ();
-            yield return new WaitForSeconds(frequency);
+        if (thisMaterial == null)
+            thisMaterial = GetComponent<MeshRenderer>().material;
 
-            if(mat.GetFloat("_EmissionColor") >= max)
-            {
-                isIncreasing = false;
-                isDecreasing = true;
-
-                StartCoroutine(DecreaseGlow());
-            }
-        }
+//        if (enabled)
+//            StartChanging();
     }
 
-    IEnumerator DecreaseGlow()
+    public void StartChanging()
     {
-        while(isDecreasing)
+        StartCoroutine(ChangeEmissonMap());
+
+    }
+
+    public void StopChanging()
+    {
+        StopAllCoroutines();
+    }
+
+    IEnumerator ChangeEmissonMap()
+    {
+        while (enabled && emissionMaps.Count > 0)
         {
-            value -= amount;
-            mat.SetFloat("_EmissionColor", value);
-            _renderer.UpdateGIMaterials ();
-            DynamicGI.UpdateEnvironment ();
+            if (randomSelection)
+                randomValue = Random.Range(0, emissionMaps.Count);
+            else
+                randomValue = (randomValue + 1) % emissionMaps.Count;
+
+            thisMaterial.SetTexture("_EmissionMap", emissionMaps[randomValue]);
+
             yield return new WaitForSeconds(frequency);
-
-            if(mat.GetFloat("_EmissionColor") <= min)
-            {
-                isIncreasing = true;
-                isDecreasing = false;
-
-                StartCoroutine(IncreaseGlow());
-            }
         }
     }
 }

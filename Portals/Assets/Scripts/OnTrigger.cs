@@ -21,7 +21,7 @@ public class OnTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
-        if (this.enabled)
+        if (enabled)
         {
             if (coll.name.Contains(triggerName))
             {
@@ -32,7 +32,7 @@ public class OnTrigger : MonoBehaviour
 
     void OnTriggerExit(Collider coll)
     {
-        if (this.enabled)
+        if (enabled)
         {
             if (coll.name.Contains(triggerName))
             {
